@@ -160,6 +160,8 @@ function addBasket(e){
         setOne("balance", newBalance)
         let defaultMoney = getLocal("balance")
         cash.innerHTML = defaultMoney;
+        addStore() 
+
 }
 
 let checkMoney = (currentFilm) => {
@@ -179,12 +181,17 @@ let addSimpleBasket = (y) => {
         let newArr = basket.map(z => {
             if (z.id === y.id) {
                 return { ...z, count: z.count + 1 }
+                count.innerHTML += `<span>${e.count}</span>`
             }
+        
             return z
         })
         setOne("basket", newArr)
     }
+    
 }
+
+
 
 
 
@@ -194,15 +201,17 @@ function addStore(){
     arr.forEach(e=>{
         store.innerHTML += `
         <p>${e.title} <span class="eprice">${e.price}</span> <span>${e.count}</span>
-        <span onclick='delStore(${e.id})'>SIL</span>
+        <span onclick='delStore(${e.id})'><i class="fa-solid fa-trash"></i></span>
         </p>`
+   
     })
 }
 
-addStore()
+
 
 
 function delStore(id) {
+    let myBalance = getLocal("balance")
     let arr = JSON.parse(localStorage.getItem("basket"))
     let current = arr.find(e=> e.id === id);
 
@@ -219,14 +228,8 @@ function delStore(id) {
         })
         localStorage.setItem("basket", JSON.stringify(newArr))
     }
-
-
-    addStore()
-   
+    addStore() 
 }
 
-// function addBalace (e){
-//    let balarr = JSON.parse(localStorage.getItem('balace'))
 
-
-// }
+   

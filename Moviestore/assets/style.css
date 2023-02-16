@@ -148,7 +148,7 @@ color: red;
     }
 }
 
-/* @keyframes bounce {
+ @keyframes bounce {
   50% {
     opacity: 1;
     transform: scale(1.1);
@@ -157,7 +157,7 @@ color: red;
     opacity: 1;
     transform: scale(1);
   }
-} */
+} 
 
 .ticket__content {
     width: 100%;
@@ -237,12 +237,6 @@ color: red;
     display: none;
 }
 
-.store p {
-    width: 90%;
-    height: 50px;
-    margin: 10px 0;
-    background-color: yellow;
-}
 
 i {
     cursor: pointer;
@@ -277,3 +271,7 @@ sup {
     right: -15px;
     color: #457fb4;
 }
+
+
+
+
